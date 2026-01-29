@@ -3,10 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue) ![Flask](https://img.shields.io/badge/Framework-Flask-green) ![Plotly](https://img.shields.io/badge/Visualization-Plotly-orange)
 
 ## 📖 项目介绍 (Introduction)
-
-本项目是 **山东大学软件学院《WEB数据管理》课程实验三** 的成果。
-
-该项目基于实验一爬取的 **济南市 2015-2024 年天气数据（3000+条）**，构建了一个基于 Web 的数据可视化应用。系统使用 **Flask** 作为后端框架，结合 **Pandas** 进行数据清洗与处理，并利用 **Plotly** 实现动态、交互式的图表展示。用户可以通过浏览器查看济南市近十年的气温变化趋势、特定日期（10月31日）的温度变化、年度极值对比以及天气类型分布。
+该项目基于 **济南市 2015-2024 年天气数据（3000+条）**，构建了一个基于 Web 的数据可视化应用。系统使用 **Flask** 作为后端框架，结合 **Pandas** 进行数据清洗与处理，并利用 **Plotly** 实现动态、交互式的图表展示。用户可以通过浏览器查看济南市近十年的气温变化趋势、特定日期（10月31日）的温度变化、年度极值对比以及天气类型分布。
 
 ## 🛠️ 技术栈 (Tech Stack)
 
