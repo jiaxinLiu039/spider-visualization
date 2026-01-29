@@ -59,3 +59,28 @@
 ├── requirements.txt                 # 项目依赖
 └── README.md                        # 项目说明文档
 
+## 🚀 快速开始 (Quick Start)
+
+如果您想在本地运行本项目，请按照以下步骤操作：
+
+1.  **环境准备**
+    * [cite_start]确保已安装 **Python 3.12** [cite: 1]。
+    * [cite_start]推荐使用 **PyCharm 2025.1** 或其他代码编辑器打开项目根目录 [cite: 1]。
+
+2.  **安装依赖库**
+    本项目依赖 Flask 进行 Web 服务，Pandas 进行数据处理，Plotly 进行可视化。请在终端运行以下命令安装：
+    ```bash
+    pip install flask pandas plotly
+    ```
+
+3.  **检查数据文件**
+    [cite_start]确保项目目录中包含数据文件：`data/jinan_weather_2015_2024.csv` [cite: 1]。
+
+4.  **运行程序**
+    找到主 Python 文件（通常为 `app.py` 或 `main.py`），在终端运行：
+    ```bash
+    python app.py
+    ```
+
+5.  **访问页面**
+    [cite_start]程序启动后，控制台会输出访问地址。请打开浏览器访问该地址（通常为 `http://127.0.0.1:5000`），即可在网页中查看到包含 5 个交互式图表的可视化大屏 [cite: 1, 10]。
