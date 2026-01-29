@@ -43,7 +43,6 @@
 
 ## 📂 项目结构 (Project Structure)
 
-```text
 ├── data/
 [cite_start]│   └── jinan_weather_2015_2024.csv  # 原始天气数据源 
 ├── static/
