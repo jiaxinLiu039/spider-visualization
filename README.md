@@ -59,7 +59,7 @@
 ├── requirements.txt                 # 项目依赖
 └── README.md                        # 项目说明文档
 
-快速开始 (How to Run)
+##快速开始 (How to Run)
 1.安装依赖 确保安装了 pandas, flask, plotly 等库：
 pip install pandas flask plotly
 2.运行应用
