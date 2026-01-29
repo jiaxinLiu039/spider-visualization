@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>济南天气数据可视化</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">济南市2015-2024年天气数据可视化</h1>
+        
+        <!-- 标题框 -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="title-box active" data-chart="chart1">
+                    <h3>全年温度变化趋势</h3>
+                    <p>展示2015-2024年全年最高和最低温度变化趋势</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="title-box" data-chart="chart2">
+                    <h3>10月31日温度变化</h3>
+                    <p>展示每年10月31日的温度变化情况</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="title-box" data-chart="chart3">
+                    <h3>年度温度对比</h3>
+                    <p>对比各年度的最高和最低温度</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="title-box" data-chart="chart4">
+                    <h3>2024年白天天气分布</h3>
+                    <p>展示2024年白天各种天气类型的占比</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="title-box" data-chart="chart5">
+                    <h3>2024年夜间天气分布</h3>
+                    <p>展示2024年夜间各种天气类型的占比</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 图表容器 -->
+        <div class="chart-container">
+            <div id="chart1" class="chart active"></div>
+            <div id="chart2" class="chart"></div>
+            <div id="chart3" class="chart"></div>
+            <div id="chart4" class="chart"></div>
+            <div id="chart5" class="chart"></div>
+        </div>
+    </div>
+
+    <!-- 将数据传递给JavaScript -->
+    <script>
+        window.chartData = {
+            graph1: {{ graphJSON1 | safe }},
+            graph2: {{ graphJSON2 | safe }},
+            graph3: {{ graphJSON3 | safe }},
+            graph4: {{ graphJSON4 | safe }},
+            graph5: {{ graphJSON5 | safe }}
+        };
+    </script>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
