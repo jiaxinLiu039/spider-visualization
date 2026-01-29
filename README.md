@@ -59,9 +59,3 @@
 ├── requirements.txt                 # 项目依赖
 └── README.md                        # 项目说明文档
 
-##快速开始 (How to Run)
-1.安装依赖 确保安装了 pandas, flask, plotly 等库：
-pip install pandas flask plotly
-2.运行应用
-python app.py
-访问页面 打开浏览器并访问本地地址（通常为 http://127.0.0.1:5000），即可看到渲染后的可视化大屏。
