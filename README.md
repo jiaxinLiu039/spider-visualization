@@ -1,36 +1,67 @@
-# 济南市天气数据可视化分析 (2015-2024)
+# 济南天气数据可视化分析系统 (Jinan Weather Visualization)
 
-## 项目简介
-本项目是一个基于Flask的Web数据可视化应用，对济南市2015-2024年的天气数据进行多维度可视化分析。通过多种图表展示温度变化趋势和天气分布情况。
+![Python](https://img.shields.io/badge/Python-3.12-blue) ![Flask](https://img.shields.io/badge/Framework-Flask-green) ![Plotly](https://img.shields.io/badge/Visualization-Plotly-orange)
 
-## 技术栈
-- **后端框架**: Flask
-- **数据处理**: Pandas
-- **数据可视化**: Plotly
-- **前端**: HTML, CSS, JavaScript
-- **编程语言**: Python 3.12
+## 📖 项目介绍 (Introduction)
 
-## 数据来源
-- 使用实验一爬取的济南市天气数据（3000+条记录）
-- 数据时间范围：2015年1月1日至2024年12月31日
+[cite_start]本项目是 **山东大学软件学院《WEB数据管理》课程实验三** 的成果 。
 
-## 功能特性
+[cite_start]该项目旨在对实验一爬取的 **济南市 2015-2024 年天气数据（3000+条）** 进行深度分析与展示 [cite: 1][cite_start]。系统使用 **Flask** 作为后端框架，结合 **Pandas** 进行数据清洗与处理，并摒弃了传统的 Matplotlib，转而利用 **Plotly** 库实现支持动态交互和下拉菜单的高级图表展示 。
 
-### 可视化图表
-1. **全年温度趋势图**
-   - 展示济南市2015-2024年最高温度和最低温度的变化趋势
-   - 使用折线图直观显示整体温度变化
+[cite_start]前端页面通过加载用户界面，作为容器展示从 Python 后端传递过来的天气数据图表 [cite: 10]。
 
-2. **特定日期温度分析**
-   - 展示每年10月31日的温度变化情况
-   - 分析特定日期的长期温度趋势
+## 🛠️ 技术栈 (Tech Stack)
 
-3. **年度温度对比**
-   - 柱状图对比各年度的最高和最低温度
-   - 直观展示年度间温度差异
+* [cite_start]**开发环境**: PyCharm 2025.1 
+* [cite_start]**编程语言**: Python 3.12 
+* [cite_start]**Web 框架**: Flask 
+* [cite_start]**数据处理**: Pandas (读取/清洗/日期处理), re (字符串处理) 
+* [cite_start]**数据可视化**: Plotly (动态图表绘制) 
+* [cite_start]**前端技术**: HTML5, CSS3, JavaScript (Main.js 调用 Plotly) [cite: 1, 10]
 
-4. **天气类型分布**
-   - 饼图展示2024年白天天气类型占比分布
-   - 饼图展示2024年夜间天气类型占比分布
+## 📊 功能与图表 (Features & Charts)
 
-## 项目结构
+本项目主要包含五个核心可视化图表，通过 Web 页面进行交互展示：
+
+1.  **济南市 2015-2024 年温度变化趋势 (折线图)**
+    * [cite_start]展示主要时间段内的最高温与最低温走势 。
+    * [cite_start]*数据洞察*: 观察到近十年来最高温度有逐渐上升的趋势，直观感受温室效应日益明显 。
+
+2.  **10月31日历史温度变化 (折线图)**
+    * [cite_start]筛选每年 10 月 31 日（作者生日）的数据进行特定展示 [cite: 3]。
+    * [cite_start]*数据洞察*: 展示特定日期在不同年份的温度波动特例 。
+
+3.  **年度最高/最低温度对比 (柱状图)**
+    * [cite_start]计算并展示每一年的年度最高温和最低温 [cite: 6]。
+    * [cite_start]*数据洞察*: 极端温度（最高和最低）均呈现逐年攀升的趋势 。
+
+4.  **2024年白天天气分布 (扇形图)**
+    * [cite_start]统计并展示 2024 年全年的白天天气类型占比 [cite: 1, 8]。
+    * [cite_start]*数据洞察*: 晴天居多 (40-45%)，其次是多云 。
+
+5.  **2024年夜间天气分布 (扇形图)**
+    * [cite_start]统计并展示 2024 年全年的夜间天气类型占比 [cite: 1, 9]。
+    * [cite_start]*数据洞察*: 夜间阴天的情况显著多于白天 (夜间 12.6% vs 白天 7.65%) 。
+
+## 📂 项目结构 (Project Structure)
+
+```text
+├── data/
+│   └── jinan_weather_2015_2024.csv  # 原始天气数据源 
+├── static/
+│   ├── css/
+│   │   └── style.css                # 页面样式定义 [cite: 13]
+│   └── js/
+│       └── main.js                  # 调用 Plotly.js 函数绘制图表 [cite: 10]
+├── templates/
+│   └── index.html                   # 用户界面容器 [cite: 10]
+├── app.py                           # Flask 应用主程序 (包含数据清洗逻辑)
+├── requirements.txt                 # 项目依赖
+└── README.md                        # 项目说明文档
+
+快速开始 (How to Run)
+1.安装依赖 确保安装了 pandas, flask, plotly 等库：
+pip install pandas flask plotly
+2.运行应用
+python app.py
+访问页面 打开浏览器并访问本地地址（通常为 http://127.0.0.1:5000），即可看到渲染后的可视化大屏。
